@@ -1,0 +1,180 @@
+/* General Reset */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5ebe0;
+    color: #4a2c2a;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #3e2723;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    color: #ffcc80;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc80;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('coffee-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* Menu Section */
+.menu {
+    max-width: 1100px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.menu h2 {
+    font-size: 36px;
+    color: #3e2723;
+    margin-bottom: 20px;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Individual Menu Item */
+.menu-item {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.menu-item p {
+    font-size: 14px;
+    color: #6d4c41;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #d32f2f;
+}
+
+/* Footer */
+footer {
+    background: #3e2723;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.social-media {
+    margin-top: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    color: white;
+    font-size: 20px;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffcc80;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 90%;
+        max-width: 300px;
+    }
+}
