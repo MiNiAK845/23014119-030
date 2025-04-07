@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyShop - E-commerce Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-pink-600 fixed w-full top-0 z-10 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+            <div class="logo">
+                <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" class="h-12">
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-white text-lg hover:text-yellow-400">Home</a></li>
+                <li><a href="products.html" class="text-white text-lg hover:text-yellow-400">Products</a></li>
+                <li><a href="cart.html" class="text-white text-lg hover:text-yellow-400">Cart</a></li>
+                <li><a href="contact.html" class="text-white text-lg hover:text-yellow-400">Contact</a></li>
+                <li><a href="about.html" class="text-white text-lg hover:text-yellow-400">About Us</a></li>
+                <li><a href="login-register.html" class="text-white text-lg hover:text-yellow-400">Login/Register</a></li>
+                <li><a href="order-confirmation.html" class="text-white text-lg hover:text-yellow-400">Order Confirmation</a></li>
+                <li><a href="admin.html" class="text-white text-lg hover:text-yellow-400">Admin Panel</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero bg-cover bg-center h-[75vh] flex items-center justify-center text-center relative bg-black bg-opacity-60" style="background-image: url('job-hero.jpg'); margin-top: 72px;">
+        <div class="hero-content bg-black bg-opacity-60 p-8 rounded-lg max-w-2xl mx-auto">
+            <h2 class="text-4xl text-yellow-400 mb-4">Welcome to MyShop</h2>
+            <p class="text-xl text-gray-200 mb-4">Explore the best deals on electronics, fashion, and more!</p>
+            <a href="shop-now.html" class="inline-block bg-pink-600 text-white px-6 py-3 rounded-full hover:bg-yellow-400">Shop Now</a>
+        </div>
+    </header>
+
+    <!-- Featured Products -->
+    <section class="product-listings max-w-6xl mx-auto my-16 text-center px-4 py-6">
+        <h2 class="text-3xl text-gray-800 mb-8">Featured Products</h2>
+        <div class="product-items grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+            <!-- Product Item 1 -->
+            <div class="product-item bg-white p-4 shadow-md rounded-md hover:shadow-lg transition transform hover:translate-y-1 max-w-xs mx-auto">
+                <img src="ultra slim.PNG" alt="Laptop" class="w-40 h-40 object-cover mx-auto rounded mb-3">
+                <h3 class="text-lg text-gray-800 mb-1">Smart Laptop</h3>
+                <p class="text-sm text-gray-600 mb-2">High-performance laptop for everyday use.</p>
+                <span class="price text-base font-bold text-green-500 block mb-3">$899</span>
+                <a href="product-details-laptop.html" class="inline-block bg-pink-600 text-white py-1.5 px-4 rounded hover:bg-yellow-400 text-sm">View Details</a>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="product-item bg-white p-4 shadow-md rounded-md hover:shadow-lg transition transform hover:translate-y-1 max-w-xs mx-auto">
+                <img src="smaart 3.png" alt="Smartphone" class="w-40 h-40 object-cover mx-auto rounded mb-3">
+                <h3 class="text-lg text-gray-800 mb-1">Smartphone Pro</h3>
+                <p class="text-sm text-gray-600 mb-2">Latest smartphone with amazing camera features.</p>
+                <span class="price text-base font-bold text-green-500 block mb-3">$399</span>
+                <a href="product-details-smartphone.html" class="inline-block bg-pink-600 text-white py-1.5 px-4 rounded hover:bg-yellow-400 text-sm">View Details</a>
+            </div>
+
+            <!-- Product Item 3 -->
+            <div class="product-item bg-white p-4 shadow-md rounded-md hover:shadow-lg transition transform hover:translate-y-1 max-w-xs mx-auto">
+                <img src="noice canccelation.JPG" alt="Headphones" class="w-40 h-40 object-cover mx-auto rounded mb-3">
+                <h3 class="text-lg text-gray-800 mb-1">Wireless Headphones</h3>
+                <p class="text-sm text-gray-600 mb-2">Noise-cancelling and super comfortable.</p>
+                <span class="price text-base font-bold text-green-500 block mb-3">$149</span>
+                <a href="product-details-headphones.html" class="inline-block bg-pink-600 text-white py-1.5 px-4 rounded hover:bg-yellow-400 text-sm">View Details</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter bg-white p-12 text-center shadow-lg rounded-lg mx-auto max-w-2xl">
+        <h2 class="text-3xl text-pink-600 mb-6">Subscribe for Updates</h2>
+        <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 border rounded-lg mb-4 focus:outline-none focus:border-pink-600" required>
+        <a href="newsletter-subscription.html">
+            <button type="submit" class="bg-pink-600 text-white px-6 py-3 rounded-md hover:bg-yellow-400">Subscribe</button>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pink-600 text-white text-center py-4 mt-16">
+        <p>&copy; 2025 MyShop. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

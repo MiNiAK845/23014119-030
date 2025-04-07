@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Product Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-pink-600 fixed w-full top-0 z-10 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+            <div class="logo">
+                <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" class="h-12">
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-white text-lg hover:text-yellow-400">Home</a></li>
+                <li><a href="products.html" class="text-white text-lg hover:text-yellow-400">Products</a></li>
+                <li><a href="admin.html" class="text-white text-lg hover:text-yellow-400">Admin</a></li>
+                <li><a href="contact.html" class="text-white text-lg hover:text-yellow-400">Contact</a></li>
+                <li><a href="about.html" class="text-white text-lg hover:text-yellow-400">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Panel Section -->
+    <section class="admin-panel py-16 px-6 mt-24">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Manage Products</h2>
+
+            <!-- Add New Product -->
+            <div class="product-management mb-12">
+                <h3 class="text-2xl font-semibold mb-4">Add New Product</h3>
+                <form id="addProductForm" class="space-y-4">
+                    <input type="text" id="productName" placeholder="Product Name" class="w-full p-3 border border-gray-300 rounded-md" required>
+                    <input type="file" id="productImage" accept="image/*" class="w-full p-3 border border-gray-300 rounded-md">
+                    <input type="number" id="productPrice" placeholder="Price" class="w-full p-3 border border-gray-300 rounded-md" required>
+                    <textarea id="productDescription" placeholder="Product Description" class="w-full p-3 border border-gray-300 rounded-md" required></textarea>
+                    <button type="submit" class="w-full bg-pink-600 text-white p-3 rounded-md hover:bg-pink-700">Add Product</button>
+                </form>
+            </div>
+
+            <!-- Current Products List -->
+            <div class="product-list">
+                <h3 class="text-2xl font-semibold mb-4">Current Products</h3>
+                <table class="w-full table-auto border-collapse">
+                    <thead>
+                        <tr>
+                            <th class="p-3 border border-gray-300">Product</th>
+                            <th class="p-3 border border-gray-300">Price</th>
+                            <th class="p-3 border border-gray-300">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Product 1: Smartphone X200 -->
+                        <tr>
+                            <td class="p-3 border border-gray-300">
+                                <img src="smartphone x200 2.PNG" alt="Smartphone X200" width="50" class="inline-block mr-2">
+                                Smartphone X200
+                            </td>
+                            <td class="p-3 border border-gray-300">$399</td>
+                            <td class="p-3 border border-gray-300">
+                                <button class="edit-btn bg-yellow-500 text-white p-2 rounded-md hover:bg-yellow-600">Edit</button>
+                                <button class="delete-btn bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Product 2: Noise-Canceling Headphones -->
+                        <tr>
+                            <td class="p-3 border border-gray-300">
+                                <img src="noice canccelation.JPG" alt="Noise-Canceling Headphones" width="50" class="inline-block mr-2">
+                                Noise-Canceling Headphones
+                            </td>
+                            <td class="p-3 border border-gray-300">$149</td>
+                            <td class="p-3 border border-gray-300">
+                                <button class="edit-btn bg-yellow-500 text-white p-2 rounded-md hover:bg-yellow-600">Edit</button>
+                                <button class="delete-btn bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- Product 3: UltraBook Slim 14 -->
+                        <tr>
+                            <td class="p-3 border border-gray-300">
+                                <img src="ultra slim.PNG" alt="UltraBook Slim 14" width="50" class="inline-block mr-2">
+                                UltraBook Slim 14
+                            </td>
+                            <td class="p-3 border border-gray-300">$899</td>
+                            <td class="p-3 border border-gray-300">
+                                <button class="edit-btn bg-yellow-500 text-white p-2 rounded-md hover:bg-yellow-600">Edit</button>
+                                <button class="delete-btn bg-red-500 text-white p-2 rounded-md hover:bg-red-600">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2025 ShopEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

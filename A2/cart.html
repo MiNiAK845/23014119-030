@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - E-commerce Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-pink-600 fixed w-full top-0 z-10 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+            <div class="logo">
+                <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" class="h-12">
+            </div>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="text-white text-lg hover:text-yellow-400">Home</a></li>
+                <li><a href="products.html" class="text-white text-lg hover:text-yellow-400">Products</a></li>
+                <li><a href="cart.html" class="text-white text-lg hover:text-yellow-400">Cart</a></li>
+                <li><a href="contact.html" class="text-white text-lg hover:text-yellow-400">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="cart py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-8 text-center">Your Shopping Cart</h2>
+            
+            <div class="cart-items space-y-6">
+                <!-- Cart Item 1 -->
+                <div class="cart-item flex items-center space-x-4 p-4 bg-white shadow-md rounded-md">
+                    <img src="smartphone x200 2.PNG" alt="Smartphone" class="w-24 h-24 object-cover">
+                    <div class="cart-item-info flex-1">
+                        <h3 class="text-xl font-semibold">Smartphone X200</h3>
+                        <span class="text-lg text-pink-600">$399</span>
+                        <div class="mt-2">
+                            <label for="quantity1" class="block text-sm">Quantity: </label>
+                            <input type="number" id="quantity1" value="1" min="1" max="10" class="w-16 p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <a href="Smartphone X200 - Remove Page.html" class="text-red-500 hover:text-red-600 text-sm mt-2 block">Remove</a>
+                    </div>
+                </div>
+
+                <!-- Cart Item 2 -->
+                <div class="cart-item flex items-center space-x-4 p-4 bg-white shadow-md rounded-md">
+                    <img src="noice canccelation.JPG" alt="Noise-Canceling Headphones" class="w-24 h-24 object-cover">
+                    <div class="cart-item-info flex-1">
+                        <h3 class="text-xl font-semibold">Noise-Canceling Headphones</h3>
+                        <span class="text-lg text-pink-600">$149</span>
+                        <div class="mt-2">
+                            <label for="quantity2" class="block text-sm">Quantity: </label>
+                            <input type="number" id="quantity2" value="1" min="1" max="10" class="w-16 p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <a href="Noise-Canceling Headphones - Remove Page.html" class="text-red-500 hover:text-red-600 text-sm mt-2 block">Remove</a>
+                    </div>
+                </div>
+
+                <!-- Cart Item 3 -->
+                <div class="cart-item flex items-center space-x-4 p-4 bg-white shadow-md rounded-md">
+                    <img src="ultra slim.PNG" alt="UltraBook Slim 14" class="w-24 h-24 object-cover">
+                    <div class="cart-item-info flex-1">
+                        <h3 class="text-xl font-semibold">UltraBook Slim 14</h3>
+                        <span class="text-lg text-pink-600">$899</span>
+                        <div class="mt-2">
+                            <label for="quantity3" class="block text-sm">Quantity: </label>
+                            <input type="number" id="quantity3" value="1" min="1" max="10" class="w-16 p-2 border border-gray-300 rounded-md">
+                        </div>
+                        <a href="UltraBook Slim 14 - Remove Page.html" class="text-red-500 hover:text-red-600 text-sm mt-2 block">Remove</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cart Total -->
+            <div class="cart-total mt-8 flex justify-between items-center p-4 bg-white shadow-md rounded-md">
+                <h3 class="text-2xl font-semibold">Total: <span class="text-pink-600">$1447</span></h3>
+                <button class="bg-pink-600 text-white px-6 py-3 rounded-md hover:bg-pink-700">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2025 ShopEase. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
