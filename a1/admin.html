@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Product Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" height="50">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Admin Panel Section -->
+    <section class="admin-panel">
+        <h2>Manage Products</h2>
+
+        <div class="product-management">
+            <h3>Add New Product</h3>
+            <form id="addProductForm">
+                <input type="text" id="productName" placeholder="Product Name" required>
+                <input type="file" id="productImage" accept="image/*">
+                <input type="number" id="productPrice" placeholder="Price" required>
+                <textarea id="productDescription" placeholder="Product Description" required></textarea>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+
+        <div class="product-list">
+            <h3>Current Products</h3>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Products will be added manually here -->
+                    <tr>
+                        <td>
+                            <img src="smartphone x200 1.PNG" alt="Smartphone X200" width="50">
+                            Smartphone X200
+                        </td>
+                        <td>$399</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="noice canccelation.JPG" alt="Noise-Canceling Headphones" width="50">
+                            Noise-Canceling Headphones
+                        </td>
+                        <td>$149</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="ultra slim.PNG" alt="UltraBook Slim 14" width="50">
+                            UltraBook Slim 14"
+                        </td>
+                        <td>$899</td>
+                        <td>
+                            <button class="edit-btn">Edit</button>
+                            <button class="delete-btn">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MyShop. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

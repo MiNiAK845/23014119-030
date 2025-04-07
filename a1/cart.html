@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - E-commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" height="50">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <section class="cart">
+        <h2>Your Shopping Cart</h2>
+        
+        <div class="cart-items">
+            <!-- Cart Item 1 -->
+            <div class="cart-item">
+                <img src="smartphone x200 2.PNG" alt="Smartphone">
+                <div class="cart-item-info">
+                    <h3>Smartphone X200</h3>
+                    <span class="price">$399</span>
+                    <label for="quantity1">Quantity: </label>
+                    <input type="number" id="quantity1" value="1" min="1" max="10">
+                    <a href="Smartphone X200 - Remove Page.html">Remove</a>
+                </div>
+            </div>
+
+            <!-- Cart Item 2 -->
+            <div class="cart-item">
+                <img src="noice cancelation.JPG" alt="Headphones">
+                <div class="cart-item-info">
+                    <h3>Noise-Canceling Headphones</h3>
+                    <span class="price">$149</span>
+                    <label for="quantity2">Quantity: </label>
+                    <input type="number" id="quantity2" value="1" min="1" max="10">
+                    <a href="Noise-Canceling Headphones - Remove Page.html">Remove</a>
+                </div>
+            </div>
+
+            <!-- Cart Item 3 -->
+            <div class="cart-item">
+                <img src="ultra slim.PNG" alt="UltraBook Slim 14">
+                <div class="cart-item-info">
+                    <h3>UltraBook Slim 14</h3>
+                    <span class="price">$899</span>
+                    <label for="quantity3">Quantity: </label>
+                    <input type="number" id="quantity3" value="1" min="1" max="10">
+                    <a href="UltraBook Slim 14 - Remove Page.html">Remove</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart-total">
+            <h3>Total Price: <span id="totalPrice">$1447</span></h3>
+            <button onclick="window.location.href='checkout.html'">Proceed to Checkout</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ShopEase. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
