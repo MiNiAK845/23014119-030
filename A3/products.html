@@ -43,7 +43,7 @@
                     <h3 class="text-lg font-semibold mb-2">Smartphone X200</h3>
                     <p class="text-gray-600 text-sm mb-3">High-speed, sleek design, and amazing camera features.</p>
                     <span class="text-pink-600 font-semibold block mb-3">$399</span>
-                    <a href="Smartphone X200 - Add to Cart Page.html" class="inline-block bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 text-sm">Add to Cart</a>
+                    <button onclick="addToCart('Smartphone X200', 'Smartphone X200 - Add to Cart Page.html')" class="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 text-sm">Add to Cart</button>
                 </div>
 
                 <!-- Product 2 -->
@@ -52,7 +52,7 @@
                     <h3 class="text-lg font-semibold mb-2">Noise-Canceling Headphones</h3>
                     <p class="text-gray-600 text-sm mb-3">Experience immersive sound with top-level comfort.</p>
                     <span class="text-pink-600 font-semibold block mb-3">$149</span>
-                    <a href="Noise-Canceling Headphones - Add to Cart Page.html" class="inline-block bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 text-sm">Add to Cart</a>
+                    <button onclick="addToCart('Noise-Canceling Headphones', 'Noise-Canceling Headphones - Add to Cart Page.html')" class="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 text-sm">Add to Cart</button>
                 </div>
 
                 <!-- Product 3 -->
@@ -61,7 +61,7 @@
                     <h3 class="text-lg font-semibold mb-2">UltraBook Slim 14"</h3>
                     <p class="text-gray-600 text-sm mb-3">Lightweight, powerful, and perfect for work or play.</p>
                     <span class="text-pink-600 font-semibold block mb-3">$899</span>
-                    <a href="UltraBook Slim 14 - Add to Cart Page.html" class="inline-block bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 text-sm">Add to Cart</a>
+                    <button onclick="addToCart('UltraBook Slim 14', 'UltraBook Slim 14 - Add to Cart Page.html')" class="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700 text-sm">Add to Cart</button>
                 </div>
 
             </div>
@@ -72,6 +72,16 @@
     <footer class="bg-pink-600 text-white py-6 text-center">
         <p>&copy; 2025 ShopEase. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function addToCart(productName, link) {
+            alert(`${productName} has been added to your cart!`);
+            setTimeout(() => {
+                window.location.href = link;
+            }, 1500);
+        }
+    </script>
 
 </body>
 </html>
