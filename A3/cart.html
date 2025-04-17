@@ -1,110 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - E-commerce Store</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart - E-commerce Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans text-gray-900">
 
-    <!-- Navigation Bar -->
-    <nav class="bg-pink-600 fixed w-full top-0 z-10 shadow-lg">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
-            <div class="logo">
-                <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" class="h-12">
+  <!-- Navigation Bar -->
+  <nav class="bg-pink-600 fixed w-full top-0 z-10 shadow-lg">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-3">
+      <div class="logo">
+        <img src="MyShop_Logo_Pink (1).jpg" alt="MyShop Logo" class="h-12">
+      </div>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="text-white text-lg hover:text-yellow-400">Home</a></li>
+        <li><a href="products.html" class="text-white text-lg hover:text-yellow-400">Products</a></li>
+        <li><a href="cart.html" class="text-white text-lg hover:text-yellow-400">Cart</a></li>
+        <li><a href="contact.html" class="text-white text-lg hover:text-yellow-400">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cart Section -->
+  <section class="cart py-16 px-6 mt-24">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Your Shopping Cart</h2>
+
+      <div id="cartItems" class="bg-white shadow-lg rounded-lg p-6 space-y-6">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+
+      <!-- Cart Total -->
+      <div class="cart-total bg-white shadow-lg rounded-lg p-6 mt-8 flex justify-between items-center">
+        <h3 class="text-2xl font-semibold">Total Price: <span id="totalPrice">$0</span></h3>
+        <button onclick="window.location.href='checkout.html'" class="bg-pink-600 text-white py-2 px-6 rounded-lg hover:bg-pink-700">Proceed to Checkout</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 mt-10">
+    <div class="max-w-7xl mx-auto text-center">
+      <p>&copy; 2025 ShopEase. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript to Manage Cart -->
+  <script>
+    const cartItemsData = [
+      {
+        name: 'Smartphone X200',
+        price: 399,
+        image: 'smaart 3.png'
+      },
+      {
+        name: 'Noise-Canceling Headphones',
+        price: 149,
+        image: 'noice canccelation.JPG'
+      },
+      {
+        name: 'UltraBook Slim 14',
+        price: 899,
+        image: 'ultra slim.PNG'
+      }
+    ];
+
+    const cartContainer = document.getElementById("cartItems");
+    const totalPriceEl = document.getElementById("totalPrice");
+
+    function renderCart() {
+      cartContainer.innerHTML = '';
+      cartItemsData.forEach((item, index) => {
+        const cartItem = document.createElement("div");
+        cartItem.className = "cart-item flex items-center justify-between p-4 border-b";
+        cartItem.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-cover rounded">
+            <div class="cart-item-info">
+              <h3 class="text-xl font-semibold">${item.name}</h3>
+              <span class="text-lg text-gray-700">$${item.price}</span>
+              <label class="block text-sm mt-1">Quantity:</label>
+              <input type="number" value="1" min="1" max="10" class="quantity border p-2 rounded w-20" data-index="${index}">
+              <button class="remove-btn text-red-600 text-sm block mt-2 hover:underline" data-index="${index}">Remove</button>
             </div>
-            <ul class="flex space-x-6">
-                <li><a href="index.html" class="text-white text-lg hover:text-yellow-400">Home</a></li>
-                <li><a href="products.html" class="text-white text-lg hover:text-yellow-400">Products</a></li>
-                <li><a href="cart.html" class="text-white text-lg hover:text-yellow-400">Cart</a></li>
-                <li><a href="contact.html" class="text-white text-lg hover:text-yellow-400">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+          </div>
+        `;
+        cartContainer.appendChild(cartItem);
+      });
 
-    <!-- Cart Section -->
-    <section class="cart py-16 px-6 mt-24">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-8">Your Shopping Cart</h2>
+      attachListeners();
+      updateTotal();
+    }
 
-            <div class="cart-items bg-white shadow-lg rounded-lg p-6 space-y-6">
-                <!-- Cart Item 1 -->
-                <div class="cart-item flex items-center justify-between p-4 border-b">
-                    <div class="flex items-center space-x-4">
-                        <img src="smaart 3.png" alt="Smartphone" class="w-24 h-24 object-cover rounded">
-                        <div class="cart-item-info">
-                            <h3 class="text-xl font-semibold">Smartphone X200</h3>
-                            <span class="text-lg text-gray-700">$399</span>
-                            <label for="quantity1" class="block text-sm mt-1">Quantity:</label>
-                            <input type="number" id="quantity1" value="1" min="1" max="10" class="border p-2 rounded w-20">
-                            <a href="Smartphone X200 - Remove Page.html" class="text-red-600 text-sm block mt-2 hover:underline">Remove</a>
-                        </div>
-                    </div>
-                </div>
+    function attachListeners() {
+      document.querySelectorAll(".quantity").forEach(input => {
+        input.addEventListener("input", updateTotal);
+      });
 
-                <!-- Cart Item 2 -->
-                <div class="cart-item flex items-center justify-between p-4 border-b">
-                    <div class="flex items-center space-x-4">
-                        <img src="noice canccelation.JPG" alt="Headphones" class="w-24 h-24 object-cover rounded">
-                        <div class="cart-item-info">
-                            <h3 class="text-xl font-semibold">Noise-Canceling Headphones</h3>
-                            <span class="text-lg text-gray-700">$149</span>
-                            <label for="quantity2" class="block text-sm mt-1">Quantity:</label>
-                            <input type="number" id="quantity2" value="1" min="1" max="10" class="border p-2 rounded w-20">
-                            <a href="Noise-Canceling Headphones - Remove Page.html" class="text-red-600 text-sm block mt-2 hover:underline">Remove</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cart Item 3 -->
-                <div class="cart-item flex items-center justify-between p-4 border-b">
-                    <div class="flex items-center space-x-4">
-                        <img src="ultra slim.PNG" alt="UltraBook Slim 14" class="w-24 h-24 object-cover rounded">
-                        <div class="cart-item-info">
-                            <h3 class="text-xl font-semibold">UltraBook Slim 14</h3>
-                            <span class="text-lg text-gray-700">$899</span>
-                            <label for="quantity3" class="block text-sm mt-1">Quantity:</label>
-                            <input type="number" id="quantity3" value="1" min="1" max="10" class="border p-2 rounded w-20">
-                            <a href="UltraBook Slim 14 - Remove Page.html" class="text-red-600 text-sm block mt-2 hover:underline">Remove</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cart Total -->
-            <div class="cart-total bg-white shadow-lg rounded-lg p-6 mt-8 flex justify-between items-center">
-                <h3 class="text-2xl font-semibold">Total Price: <span id="totalPrice">$1447</span></h3>
-                <button onclick="window.location.href='checkout.html'" class="bg-pink-600 text-white py-2 px-6 rounded-lg hover:bg-pink-700">Proceed to Checkout</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <p>&copy; 2025 ShopEase. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript to Update Total Price on Quantity Change -->
-    <script>
-        // Function to update total price dynamically
-        function updateTotal() {
-            let prices = [399, 149, 899]; // Prices of items in the cart
-            let total = 0;
-            for (let i = 1; i <= prices.length; i++) {
-                let quantity = document.getElementById('quantity' + i).value;
-                total += prices[i - 1] * quantity;
-            }
-            document.getElementById('totalPrice').textContent = "$" + total;
-        }
-
-        // Add event listeners to quantity inputs
-        document.querySelectorAll('.cart-item input').forEach(input => {
-            input.addEventListener('input', updateTotal);
+      document.querySelectorAll(".remove-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const index = e.target.getAttribute("data-index");
+          cartItemsData.splice(index, 1);
+          renderCart();
         });
-    </script>
+      });
+    }
 
+    function updateTotal() {
+      let total = 0;
+      document.querySelectorAll(".quantity").forEach(input => {
+        const index = input.getAttribute("data-index");
+        const qty = parseInt(input.value) || 1;
+        total += cartItemsData[index].price * qty;
+      });
+      totalPriceEl.textContent = "$" + total;
+    }
+
+    // Initialize cart
+    renderCart();
+  </script>
 </body>
 </html>
