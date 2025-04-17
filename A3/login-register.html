@@ -25,7 +25,7 @@
     </nav>
 
     <!-- Login/Register Section -->
-    <section class="login-register py-16 px-6">
+    <section class="login-register py-16 px-6 mt-20">
         <div class="max-w-7xl mx-auto text-center">
             <h2 class="text-3xl font-bold mb-8">Login or Register</h2>
 
@@ -33,9 +33,10 @@
                 <!-- Login Form -->
                 <div class="login-form bg-white p-8 shadow-lg rounded-lg">
                     <h3 class="text-2xl font-semibold mb-6">Login</h3>
-                    <form action="#" method="POST">
-                        <input type="email" placeholder="Email" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
-                        <input type="password" placeholder="Password" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                    <form action="#" method="POST" onsubmit="return validateForm('loginForm')">
+                        <input type="email" placeholder="Email" required class="w-full p-3 mb-4 border border-gray-300 rounded-md" name="loginEmail">
+                        <input id="loginPassword" type="password" placeholder="Password" required class="w-full p-3 mb-2 border border-gray-300 rounded-md" name="loginPassword">
+                        <button type="button" onclick="togglePasswordVisibility('loginPassword')" class="text-sm text-blue-500 mb-4">Show/Hide Password</button>
                         <button type="submit" class="w-full bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700">Login</button>
                     </form>
                 </div>
@@ -43,10 +44,11 @@
                 <!-- Register Form -->
                 <div class="register-form bg-white p-8 shadow-lg rounded-lg">
                     <h3 class="text-2xl font-semibold mb-6">Register</h3>
-                    <form action="#" method="POST">
-                        <input type="text" placeholder="Full Name" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
-                        <input type="email" placeholder="Email" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
-                        <input type="password" placeholder="Password" required class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                    <form action="#" method="POST" onsubmit="return validateForm('registerForm')">
+                        <input type="text" placeholder="Full Name" required class="w-full p-3 mb-4 border border-gray-300 rounded-md" name="fullName">
+                        <input type="email" placeholder="Email" required class="w-full p-3 mb-4 border border-gray-300 rounded-md" name="registerEmail">
+                        <input id="registerPassword" type="password" placeholder="Password" required class="w-full p-3 mb-2 border border-gray-300 rounded-md" name="registerPassword">
+                        <button type="button" onclick="togglePasswordVisibility('registerPassword')" class="text-sm text-blue-500 mb-4">Show/Hide Password</button>
                         <button type="submit" class="w-full bg-pink-600 text-white py-3 rounded-md hover:bg-pink-700">Register</button>
                     </form>
                 </div>
@@ -60,6 +62,33 @@
             <p>&copy; 2025 MyShop. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript Functions -->
+    <script>
+        // Function to toggle password visibility
+        function togglePasswordVisibility(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        // Function to validate form inputs (checks if required fields are filled)
+        function validateForm(formId) {
+            const form = document.forms[formId];
+            let valid = true;
+            for (let i = 0; i < form.length; i++) {
+                if (form[i].type !== "button" && form[i].required && form[i].value.trim() === "") {
+                    alert("Please fill out all required fields.");
+                    valid = false;
+                    break;
+                }
+            }
+            return valid;
+        }
+    </script>
 
 </body>
 </html>
