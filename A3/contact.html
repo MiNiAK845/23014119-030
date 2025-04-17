@@ -24,7 +24,7 @@
     </nav>
 
     <!-- Contact Section -->
-    <section class="contact py-16 px-6">
+    <section class="contact py-16 px-6 mt-24">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl font-bold mb-8 text-center">Contact Us</h2>
             <p class="text-lg text-center mb-8">If you have any questions, feel free to reach out to us. We're here to help!</p>
@@ -37,7 +37,9 @@
 
                 <div>
                     <h3 class="text-2xl font-semibold">Email Us</h3>
-                    <p class="text-lg"><a href="mailto:support@shopease.com" class="text-pink-600 hover:text-pink-700">support@shopease.com</a></p>
+                    <p class="text-lg">
+                        <a href="mailto:support@shopease.com" class="text-pink-600 hover:text-pink-700">support@shopease.com</a>
+                    </p>
                 </div>
 
                 <div>
@@ -46,9 +48,20 @@
                 </div>
             </div>
 
-            <div class="google-form mt-16">
+            <div class="google-form mt-16 text-center">
                 <h3 class="text-2xl font-semibold text-center mb-8">Send Us a Message</h3>
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSege5rXxbzsE4QBWILb-9eCl3bsB1iEojWGb0bbHn3dcpuZqA/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0" class="mx-auto block">Loading…</iframe>
+                <div id="formContainer">
+                    <iframe 
+                        id="googleForm" 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSege5rXxbzsE4QBWILb-9eCl3bsB1iEojWGb0bbHn3dcpuZqA/viewform?embedded=true" 
+                        width="640" 
+                        height="700" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0" 
+                        class="mx-auto block"
+                    >Loading…</iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -59,6 +72,34 @@
             <p>&copy; 2025 ShopEase. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript for Form Interaction -->
+    <script>
+        // Function to show thank you message
+        function showThankYouMessage() {
+            const formContainer = document.getElementById('formContainer');
+            formContainer.innerHTML = `
+                <div class="bg-green-100 border border-green-400 text-green-700 px-6 py-8 rounded-lg shadow-md mx-auto max-w-xl">
+                    <h4 class="text-2xl font-bold mb-4">Thank you for contacting us!</h4>
+                    <p class="text-lg">We’ve received your message and will get back to you shortly.</p>
+                </div>
+            `;
+        }
+
+        // Function to monitor form submission (iframe URL changes after submission)
+        function checkFormSubmission() {
+            const iframe = document.getElementById('googleForm');
+            iframe.addEventListener('load', () => {
+                const submitted = iframe.contentWindow.location.href.includes('formResponse');
+                if (submitted) {
+                    showThankYouMessage();
+                }
+            });
+        }
+
+        // Call the monitoring function when page loads
+        window.addEventListener('DOMContentLoaded', checkFormSubmission);
+    </script>
 
 </body>
 </html>
